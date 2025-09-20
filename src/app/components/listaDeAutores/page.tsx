@@ -168,13 +168,13 @@ export default function PageAutores() {
                         <h2 className="text-xl mb-4 text-black">{currentAuthor ? "Editar Autor" : "Crear Autor"}</h2>
                         <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
                             <label htmlFor="name" className="text-black">Nombre del autor:</label>
-                            <input className="bg-amber-50 text-black w-full" type="text" id="name" name="name" value={formData.name} onChange={handleChange} placeholder="Ingrese el nombre del autor"/>
+                            <input className="bg-amber-50 text-black w-full" type="text" id="name" name="name" value={formData.name} onChange={handleChange} required />
                             <label htmlFor="birthDate" className="text-black">Fecha de nacimiento:</label>
-                            <input className="bg-amber-50 text-black w-full" type="text" id="birthDate" name="birthDate" value={formData.birthDate} onChange={handleChange} placeholder="Ingrese la fecha de nacimiento aa-dd-mm"/>
+                            <input className="bg-amber-50 text-black w-full" type="text" id="birthDate" name="birthDate" value={formData.birthDate} onChange={handleChange} required pattern="\d{4}-\d{2}-\d{2}"/>
                             <label htmlFor="description" className="text-black">Descripción:</label>
-                            <textarea className="bg-amber-50 text-black w-full" id="description" name="description" value={formData.description} onChange={handleChange} placeholder="Ingrese una descripción"/>
+                            <textarea className="bg-amber-50 text-black w-full" id="description" name="description" value={formData.description} onChange={handleChange} required />
                             <label htmlFor="image" className="text-black">URL de la imagen:</label>
-                            <input className="bg-amber-50 text-black w-full" type="text" id="image" name="image" value={formData.image} onChange={handleChange} placeholder="Ingrese la URL de la imagen"/>
+                            <input className="bg-amber-50 text-black w-full" type="text" id="image" name="image" value={formData.image} onChange={handleChange} />
                             <div className="flex justify-between mt-4">
                                 <button className="bg-blue-800 w-20 h-10 rounded-lg font-bold cursor-pointer" type="submit">Guardar</button>
                                 <button className="bg-gray-800 w-20 h-10 rounded-lg font-bold cursor-pointer" type="button" onClick={closeModal}>Cerrar</button>
@@ -183,7 +183,7 @@ export default function PageAutores() {
                     </div>
                 </div>
             )}
-            
+
             <div className = 'flex justify-center p-5'>
                 <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded font-[Times_New-Roman]">
                     <Link href="/crear">Crear Un Autor</Link>
