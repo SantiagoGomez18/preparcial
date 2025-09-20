@@ -2,18 +2,10 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-type Author = {
-    id: number;
-    name: string;
-    birthDate: string;
-    description: string;
-    image: string;
-};
-
 export default function PageAutores() {
-    const [authors, setAuthors] = useState<Author[]>([]); 
+    const [authors, setAuthors] = useState<any[]>([]); 
     const [showModal, setShowModal] = useState(false); 
-    const [currentAuthor, setCurrentAuthor] = useState<Author | null>(null); 
+    const [currentAuthor, setCurrentAuthor] = useState<any | null>(null); 
     const [formData, setFormData] = useState({
         name: "",
         birthDate: "",
@@ -30,7 +22,7 @@ export default function PageAutores() {
     };
 
 
-    const handleEdit = (author: Author) => {
+    const handleEdit = (author: any) => {
         setCurrentAuthor(author);
         setFormData({
             name: author.name,
@@ -152,8 +144,6 @@ export default function PageAutores() {
             .catch((err) => console.error("Error deleting author and related data:", err));
     };
 
-
-
     return (
         <main>
             <h1 className="font-bold text-[45px] flex justify-center font-[Times_New-Roman] p-5">Lista de Autores</h1>
@@ -193,6 +183,7 @@ export default function PageAutores() {
                     </div>
                 </div>
             )}
+            
             <div className = 'flex justify-center p-5'>
                 <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded font-[Times_New-Roman]">
                     <Link href="/crear">Crear Un Autor</Link>
