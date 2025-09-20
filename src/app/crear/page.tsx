@@ -48,9 +48,9 @@ export default function CrearPage() {
 
     return (
         <main>
-            <h1 className="font-bold text-[45px] flex justify-center font-[Times_New-Roman] p-5">Crear Autor</h1>
+            <h1 className="font-bold text-[45px] flex justify-center font-[Times_New-Roman] ">Crear Autor</h1>
             <div className = "justify-center items-center flex"> 
-                <form onSubmit={handleSubmit} className="flex flex-col items-center space-y-4 font-[Times_New-Roman] bg-zinc-600 p-5 rounded-lg m-20 w-240">
+                <form onSubmit={handleSubmit} className="flex flex-col items-center space-y-2 font-[Times_New-Roman] bg-zinc-600 p-5 rounded-lg m-20 w-240">
                     <label htmlFor="name">Nombre del autor:</label>
                     <input className = "bg-amber-50 text-black w-200 justify-center text-center h-15" type = "text" id="name" name="name" value={authors.name} onChange={handleChange} placeholder="Ingrese el nombre del autor" required />
                     <label htmlFor="birthDate">Fecha de nacimiento:</label>
@@ -63,7 +63,7 @@ export default function CrearPage() {
                     {showMessage && <p className="text-green-500">Autor creado exitosamente!</p>}
                 </form>
             </div>
-            <div className="flex justify-center mb-10">
+            <div className="flex justify-center ">
                 <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded font-[Times_New-Roman] cursor-progress">
                     <Link href="/authors">Autores</Link>
                 </button>
